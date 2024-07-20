@@ -1,7 +1,9 @@
 # apuntes-kubernetes
+
 Todo sobre kubernetes: PODS, SERVICES e INGRESS
 
 # How use to it?
+
 ```bash
 # Versión del cliente de kubernetes
 kubectl version --output=yaml
@@ -42,7 +44,9 @@ kubectl -n [NAME_SPACE] delete pod [NAME_POD] # Eliminar pod y kuberneter lo cre
 ```
 
 ## PODS
+
 **Single POD**
+
 ```bash
 # Pod tipo POD
 kubectl -n default get pods
@@ -51,7 +55,9 @@ kubectl delete -f manifests/samples-kubernetes/pod.yml
 kubectl -n default get pods nginx-pod -o yaml
 kubectl -n default delete pod nginx-pod
 ```
+
 **Deployment POD**
+
 ```bash
 # Pod tipo DEPLOYMENT
 kubectl -n default get pods -o wide
@@ -60,7 +66,9 @@ kubectl delete -f manifests/samples-kubernetes/pod-deployment.yml
 kubectl -n default get pods nginx-deployment-ID -o yaml
 kubectl -n default delete pod nginx-deployment-ID
 ```
+
 **Daemon-Set POD**
+
 ```bash
 # Pod tipo DAEMON-SET
 kubectl -n default get pods -o wide
@@ -69,8 +77,11 @@ kubectl delete -f manifests/samples-kubernetes/pod-daemonset.yml
 kubectl -n default get pods nginx-daemonset-ID -o yaml
 kubectl -n default delete pod nginx-daemonset-ID
 ```
+
 ## SERVICES
+
 **Cluster-IP POD Service**
+
 ```bash
 # Pod servicio tipo CLUSTER-IP
 kubectl -n default get pods -o wide
@@ -81,7 +92,9 @@ kubectl exec -it nginx-pod -- sh
 
 curl http://hello:3000 # Ejemplo ping
 ```
+
 **Node-Port POD Service**
+
 ```bash
 # Pod servicio tipo NODE-PORT
 kubectl -n default get pods -o wide
@@ -93,7 +106,9 @@ kubectl exec -it nginx-pod -- sh
 
 curl http://hello:3000 # Ejemplo ping
 ```
+
 **Load-Balancer POD Service**
+
 ```bash
 # Pod servicio tipo LOAD-BALANCER
 kubectl -n default get pods -o wide
@@ -104,7 +119,9 @@ kubectl exec -it nginx-pod -- sh
 
 curl http://hello:3000 # Ejemplo ping
 ```
+
 ## INGRESS
+
 ```bash
 kubectl -n default get pods -o wide
 
